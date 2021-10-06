@@ -1,5 +1,5 @@
 PImage Smash;
-float x1, y1, x2, y2;
+float X1, Y1, x2, Y2;
 float speedX1, speedX2;
 
 void setup() {
@@ -8,27 +8,27 @@ void setup() {
   Smash.resize(Smash.width, Smash.height);
   imageMode(CENTER);
   
-  x1 = width/2;
-  y1 = height/2;
-  x2 = x1 + 80;
-  y2 = y1 - 80;
+  X1 = width/2;
+  Y1 = height/2;
+  x2 = X1 + 80;
+  Y2 = Y1 - 80;
   speedX1 = 2;
-  speedX2 = speedX1 * 0.5;
+  speedX2 = speedX1 * 0.6;
 }
 
 void draw() {
   background(45, 90, 25);
     
   tint(200, 100);
-  image(Smash, x2, y2);
+  image(Smash, x2, Y2);
   
   noTint();
-  image(Smash, x1, y1); // the image drawn last will be in front
+  image(Smash, X1, Y1); 
   
-  x1 += speedX1;
+  X1 += speedX1;
   x2 += speedX2;
     
-  if (x1 > width || x1 < 0) {
+  if (X1 > width || X1 < 0) {
     speedX1 *= -1;  
     speedX2 *= -1;
   }
